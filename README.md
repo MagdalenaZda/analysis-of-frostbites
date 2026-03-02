@@ -16,6 +16,7 @@ Projekt badawczy stanowiący analizę statystyczną przypadków hospitalizacji z
 * `/assets` - Grafiki i pliki projektowe `.pbx`.
 * `/docs` - Pełna dokumentacja projektu w formacie `.txt`.
 
+## Podgląd projektu
 ![image](https://github.com/MagdalenaZda/projekt-odmro-enia/blob/assets/podglad.png)
 
 ##  Źródło danych
