@@ -1,0 +1,67 @@
+﻿Wnioski z przeprowadzonej analizy statystycznej (2018–2025)
+1. Charakterystyka demograficzna i ryzyko płci
+* Dominacja mężczyzn: Mężczyźni stanowią 85% hospitalizowanych. Wskazuje to na znacznie częstszą ekspozycję tej grupy na skrajnie niskie temperatury.
+
+
+* Paradoks śmiertelności u kobiet: Choć kobiet jest mniej, ich wskaźnik śmiertelności wynosi aż 22% (przy 13,5% u mężczyzn).
+
+
+* Typ rozpoznania a płeć: U kobiet dominującą przyczyną jest hipotermia (T68) – stan ogólnoustrojowy o wyższym ryzyku zgonu. U mężczyzn przeważa odmrożenie z martwicą tkanki (T34) – uraz miejscowy niosący ryzyko kalectwa.
+
+
+2. Dynamika trendów chorobowych (Kluczowa obserwacja 2021–2025)
+* Spadek odmrożeń z martwicą (od 2021): Odnotowano trend spadkowy w liczbie przypadków T34. Może to świadczyć o poprawie świadomości w zakresie ochrony kończyn lub lepszej profilaktyce miejscowej w grupach ryzyka.
+
+
+* Wzrost hipotermii (od 2022): Równolegle, od 2022 roku obserwuje się systematyczny wzrost przypadków hipotermii (T68).
+
+
+* Wniosek: Następuje zmiana charakteru zdarzeń medycznych – rzadziej dochodzi do ciężkich odmrożeń miejscowych, a częściej do groźnego dla życia wychłodzenia całego organizmu. Może to być związane ze zmianami demograficznymi (np. starzenie się społeczeństwa, gdzie seniorzy są bardziej podatni na hipotermię niż na odmrożenia kończyn).
+
+
+
+
+
+
+3. Analiza grup wiekowych
+* Ochrona dzieci: Śmiertelność wśród dzieci jest znacząco niższa (2,6%) niż u dorosłych (15%). Wynika to prawdopodobnie z szybszej interwencji opiekunów, priorytetowej ścieżki ratunkowej oraz innej fizjologii reakcji na wychłodzenie.
+4. Wpływ pandemii i "efekt odbicia"
+* Wyraźne załamanie trendu w 2020 roku (pandemia COVID-19) oraz gwałtowny skok w 2021 sugerują, że wiele przypadków z pierwszego roku pandemii trafiło do systemu z opóźnieniem, co skumulowało statystyki w roku kolejnym.
+
+
+
+
+Podsumowanie techniczne realizacji projektu w Power BI
+1. Etap przygotowania i transformacji danych (Power Query)
+* Import i czyszczenie: Dane zostały zaimportowane z plików źródłowych, a następnie oczyszczone z nadmiarowych rekordów zbiorczych.
+
+
+* W celu zachowania ciągłości obliczeń, wartości ukryte (oznaczone pierwotnie jako „<5”) zostały zastąpione stałą wartością numeryczną (2), co umożliwiło wykonywanie operacji matematycznych przy zachowaniu marginesu błędu statystycznego.
+
+
+* Normalizacja nazw: Skrócono długie nazwy jednostek chorobowych (np. zamiana „odmrożenie obejmujące mnogie okolice ciała i odmrożenia nieokreślone” na „Odmrożenia mnogie/inne”) za pomocą replace values, co znacząco poprawiło czytelność wizualizacji.
+
+
+
+
+2. Modelowanie danych i analityka DAX
+* Stworzenie miar dedykowanych: Przygotowano zestaw miar obliczeniowych w języku DAX, w tym kluczowy wskaźnik „Śmiertelność (%)”, oparty na bezpiecznym dzieleniu (funkcja DIVIDE), co wyeliminowało błędy dzielenia przez zero w okresach o zerowej liczbie pacjentów.
+
+
+* Transformacja danych: Zaimplementowano nową kolumnę z kluczem głównym, zapewniającą unikatowość rekordów i umożliwiającą poprawne relacje w modelu danych.
+
+
+3. Warstwa wizualizacji i Interaktywność
+* Zastosowanie filtrów zaawansowanych: Wykorzystano funkcję „Top N” w panelu filtrów, aby wyłonić 3 główne jednostki chorobowe, eliminując nadmiar informacyjny wynikający z rzadszych diagnoz.
+
+
+* Dynamizacja raportu: Wprowadzono fragmentatory (Slicers) dla lat, płci oraz grup wiekowych, co pozwoliło na odkrycie głębokich korelacji.
+
+
+* Wizualizacja trendów: Zastosowano wykres liniowy z synchronizowaną osią czasu oraz suwakiem powiększenia (Zoom Slider), co umożliwiło precyzyjną analizę zmian trendów między 2021 a 2025 rokiem.
+
+
+
+
+4. Optymalizacja UX/UI
+* Interakcje krzyżowe: Skonfigurowano wzajemne filtrowanie się wykresów, dzięki czemu kliknięcie w konkretną grupę wiekową lub płeć natychmiastowo przelicza statystyki dla całego dashboardu.
