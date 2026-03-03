@@ -1,7 +1,7 @@
 # Analysis of Frostbites
 
 ## Project Overview
-This project focuses on the statistical analysis of frostbite cases in Poland between 2021 and 2025 . The goal is to identify patterns related to demographics, severity, and seasonal trends based on regional data.
+This project focuses on the statistical analysis of frostbite cases in Poland between 2018 and 2025 . The goal is to identify patterns related to demographics, severity, and seasonal trends based on regional data.
 
 ## Key Insights
 * The Mortality Paradox: While men account for 85% of hospitalizations, the mortality rate among women is significantly higher at 22%, compared to 13.5% for men.
@@ -15,6 +15,7 @@ This project focuses on the statistical analysis of frostbite cases in Poland be
 2.**Cleaning data**
 * In Power Query removed duplicates to ensure statistical validity.
 * To maintain calculation continuity, values marked as "<5" were replaced with a constant numerical value of 2 by Replace Values. This approach enabled mathematical operations while maintaining an acceptable margin of statistical error.
+* Translated clinical codes (ICD-10) and categorical data from Polish to English without modifying the source files by using SWITCH().
   
 3.**Visualization**
 * Implemented "Top N" filters to isolate the 3 most frequent medical conditions, reducing visual clutter and focusing on high-impact diagnoses.
