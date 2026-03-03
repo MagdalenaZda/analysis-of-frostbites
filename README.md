@@ -31,6 +31,7 @@ This project focuses on the statistical analysis of frostbite cases in Poland be
 * Visualization: Power BI Dashboards
 * Documentation : GitHub
 
+https://github.com/user-attachments/assets/6b124324-f770-42ae-a791-73fb93b1b622
 
 ## Podgląd projektu
 https://github.com/MagdalenaZda/analysis-of-frostbites/issues/new
